@@ -21,4 +21,4 @@ getent group $GID 2>&1 > /dev/null || addgroup -g $GID $USER
 # create user if it doesn't exist
 getent passwd $UID 2>&1 > /dev/null || adduser -D -h "$HOME" -u $UID -G $USER $USER
 
-exec su-exec "${UID}:${GID}" "$@"
+exec su $USER -g $USER "$@"
