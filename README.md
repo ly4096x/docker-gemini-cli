@@ -15,6 +15,15 @@ A convenient and isolated way to run the [Gemini CLI](https://github.com/google-
 
 ## Usage
 
+```
+docker run -it --rm \
+        -v "$(pwd):/home/gemini/workspace" \
+        -v "$HOME/.gemini:/home/gemini/.gemini" \
+        -e DEFAULT_UID=$(id -u) \
+        -e DEFAULT_GID=$(id -g) \
+        cfhr.io/ly4096x/gemini-cli "$@"
+```
+
 ### Recommended Setup
 
 The recommended way to use this image is to create a shell function that handles all the necessary mount points and permissions. Add the following function to your `~/.bash_aliases` or `~/.zsh_aliases`:
@@ -31,7 +40,7 @@ function gemini {
         -v "$HOME/.gemini:/home/gemini/.gemini" \
         -e DEFAULT_UID=$(id -u) \
         -e DEFAULT_GID=$(id -g) \
-        tgagor/gemini-cli "$@"
+        cfhr.io/ly4096x/gemini-cli "$@"
 }
 ```
 
