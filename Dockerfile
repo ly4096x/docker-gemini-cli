@@ -9,7 +9,7 @@ RUN chmod +x /usr/local/sbin/docker-entrypoint.sh
 # Install nodejs, npm, Gemini CLI
 ARG GEMINI_CLI_VERSION="latest"
 ARG TARGETPLATFORM
-RUN apt-get update && \
+RUN bash -c 'apt-get update && \
     apt-get install -y --no-install-recommends curl unzip procps && \
     curl -o- https://fnm.vercel.app/install | bash && \
     source /root/.bashrc && \
@@ -18,7 +18,7 @@ RUN apt-get update && \
     rm -rf ~/.npm && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
-    gemini --version
+    gemini --version'
 
 WORKDIR /home/gemini/workspace
 ENTRYPOINT ["/usr/local/sbin/docker-entrypoint.sh", "gemini"]
