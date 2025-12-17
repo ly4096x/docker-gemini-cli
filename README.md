@@ -17,11 +17,14 @@ A convenient and isolated way to run the [Gemini CLI](https://github.com/google-
 
 ```bash
 docker run --rm -it \
-    -v "$(pwd):/home/gemini/workspace" \
-    -v "$HOME/.gemini:/home/gemini/.gemini" \
-    -e DEFAULT_UID=$(id -u) \
-    -e DEFAULT_GID=$(id -g) \
-    ghcr.io/ly4096x/gemini-cli [command]
+  -v "$(pwd):/home/gemini/workspace" \
+  -v "$HOME/.gemini:/home/gemini/.gemini" \
+  -e DEFAULT_UID=$(id -u) \
+  -e DEFAULT_GID=$(id -g) \
+  -e "TERM=$TERM" \
+  -e "GEMINI_API_KEY=$GEMINI_API_KEY" \
+  -e "GITHUB_MCP_PAT=$GITHUB_MCP_PAT" \
+  ghcr.io/ly4096x/gemini-cli [command]
 ```
 
 ### Recommended Setup
@@ -40,6 +43,8 @@ function gemini {
         -v "$HOME/.gemini:/home/gemini/.gemini" \
         -e DEFAULT_UID=$(id -u) \
         -e DEFAULT_GID=$(id -g) \
+        -e "TERM=$TERM" \
+        -e "GEMINI_API_KEY=$GEMINI_API_KEY" \
         ghcr.io/ly4096x/gemini-cli "$@"
 }
 ```
