@@ -1,5 +1,6 @@
 ---
 
+registry: ghcr.io
 labels:
   org.opencontainers.image.licenses: GPL-2.0-only
   org.opencontainers.image.title: Weekly updated Google Gemini CLI Docker image
