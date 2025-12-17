@@ -7,18 +7,16 @@ GID=${DEFAULT_GID:-1000}
 USER=${DEFAULT_USERNAME:-gemini}
 HOME=${DEFAULT_HOME_DIR:-/home/$USER}
 
-if [ "$DEBUG" == "true" ]; then
-    echo "Creating unprivileged user matching system user..."
-    echo "  Name:     $USER"
-    echo "  UID:      $UID"
-    echo "  GID:      $GID"
-    echo "  Home dir: $HOME"
-fi
+echo "Creating unprivileged user matching system user..."
+echo "  Name:     $USER"
+echo "  UID:      $UID"
+echo "  GID:      $GID"
+echo "  Home dir: $HOME"
 
 # create group if it doesn't exist
-getent group $GID 2>&1 > /dev/null || addgroup -g $GID $USER
+getent group $GID 2>&1 > /dev/null || addgroup --gid $GID $USER
 
 # create user if it doesn't exist
-getent passwd $UID 2>&1 > /dev/null || adduser -D -h "$HOME" -u $UID -G $USER $USER
+getent passwd $UID 2>&1 > /dev/null || adduser --disabled-password --no-create-home --gecos "" --home "$HOME" --uid $UID --gid $GID $USER
 
-exec su $USER -g $USER "$@"
+exec su $USER -g $USER -c "$@"
