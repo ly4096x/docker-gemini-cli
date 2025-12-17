@@ -1,6 +1,10 @@
 FROM node:lts-slim
 
-VOLUME /tmp /var/cache/apk /var/tmp /root/.cache /root/.npm
+VOLUME /tmp /root/.cache /root/.npm
+
+# Setup unprivileged user defaults
+COPY usr/ /usr/
+RUN chmod +x /usr/local/sbin/docker-entrypoint.sh
 
 # Install Gemini CLI
 ARG GEMINI_CLI_VERSION="latest"
@@ -9,5 +13,5 @@ RUN npm install -g @google/gemini-cli@${GEMINI_CLI_VERSION} && \
     rm -rf ~/.npm && \
     gemini --version
 
-WORKDIR /workspace
-ENTRYPOINT ["gemini"]
+WORKDIR /home/gemini/workspace
+ENTRYPOINT ["/usr/local/sbin/docker-entrypoint.sh", "gemini"]
