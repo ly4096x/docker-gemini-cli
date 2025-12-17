@@ -15,13 +15,17 @@ A convenient and isolated way to run the [Gemini CLI](https://github.com/google-
 
 ## Usage
 
-```
-docker run -it --rm \
-        -v "$(pwd):/home/gemini/workspace" \
-        -v "$HOME/.gemini:/home/gemini/.gemini" \
-        -e DEFAULT_UID=$(id -u) \
-        -e DEFAULT_GID=$(id -g) \
-        cfhr.io/ly4096x/gemini-cli "$@"
+### Basic Docker Usage
+
+While not recommended, you can still run the container directly with Docker commands:
+
+```bash
+docker run --rm -it \
+    -v "$(pwd):/home/gemini/workspace" \
+    -v "$HOME/.gemini:/home/gemini/.gemini" \
+    -e DEFAULT_UID=$(id -u) \
+    -e DEFAULT_GID=$(id -g) \
+    ghcr.io/ly4096x/gemini-cli [command]
 ```
 
 ### Recommended Setup
@@ -40,7 +44,7 @@ function gemini {
         -v "$HOME/.gemini:/home/gemini/.gemini" \
         -e DEFAULT_UID=$(id -u) \
         -e DEFAULT_GID=$(id -g) \
-        cfhr.io/ly4096x/gemini-cli "$@"
+        ghcr.io/ly4096x/gemini-cli "$@"
 }
 ```
 
@@ -60,19 +64,6 @@ This setup:
 - The setup works the same way
 - File permissions might behave differently due to how Docker Desktop handles mounting on macOS
 - If you experience permission issues, you may need to add `:delegated` to volume mounts for better performance
-
-### Basic Docker Usage
-
-While not recommended, you can still run the container directly with Docker commands:
-
-```bash
-docker run --rm -it \
-    -v "$(pwd):/home/gemini/workspace" \
-    -v "$HOME/.gemini:/home/gemini/.gemini" \
-    -e DEFAULT_UID=$(id -u) \
-    -e DEFAULT_GID=$(id -g) \
-    tgagor/gemini-cli [command]
-```
 
 ### Examples
 
@@ -95,23 +86,11 @@ gemini
 
 The following tags are available on [Docker Hub](https://hub.docker.com/r/tgagor/docker-gemini-cli):
 
-*   [`latest`](https://hub.docker.com/repository/docker/tgagor/gemini-cli/tags): The most recent, stable version of the Gemini CLI.
-*   [`v0.19.4`](https://hub.docker.com/repository/docker/tgagor/gemini-cli/tags) (e.g., `v0.11.0`): Corresponds to a specific version of the Gemini CLI.
-*   [`v0.19`](https://hub.docker.com/repository/docker/tgagor/gemini-cli/tags) (e.g., `v0.11`): Points to the latest patch release for a minor version.
-*   [`v0`](https://hub.docker.com/repository/docker/tgagor/gemini-cli/tags) (e.g., `v0`): Points to the latest minor release for a major version.
+*   [`latest`](https://ghcr.io/ly4096x/gemini-cli/tags): The most recent, stable version of the Gemini CLI.
+*   [`v0.19.4`](https://ghcr.io/ly4096x/gemini-cli/tags) (e.g., `v0.11.0`): Corresponds to a specific version of the Gemini CLI.
+*   [`v0.19`](https://ghcr.io/ly4096x/gemini-cli/tags) (e.g., `v0.11`): Points to the latest patch release for a minor version.
+*   [`v0`](https://ghcr.io/ly4096x/gemini-cli/tags) (e.g., `v0`): Points to the latest minor release for a major version.
 
 ## Security
 
-Images are automatically scanned for vulnerabilities. You can view the latest security report [here](https://github.com/tgagor/docker-gemini-cli/security/advisories).
-
-## Image sizes
-![Docker Image Size](https://img.shields.io/docker/image-size/tgagor/gemini-cli?arch=amd64&label=tgagor%2Fgemini-cli%20(amd64))
-![Docker Image Size](https://img.shields.io/docker/image-size/tgagor/gemini-cli?arch=arm64&label=tgagor%2Fgemini-cli%20(arm64))
-![Docker Image Size](https://img.shields.io/docker/image-size/tgagor/gemini-cli?arch=arm&label=tgagor%2Fgemini-cli%20(arm))
-
-
-
-
-## Images
-You can fetch docker image from:
-* [tgagor/gemini-cli](https://hub.docker.com/r/tgagor/gemini-cli)
+Images are automatically scanned for vulnerabilities. You can view the latest security report [here](https://github.com/ly4096x/docker-gemini-cli/security/advisories).
