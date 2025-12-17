@@ -12,7 +12,10 @@ RUN npm install -g @google/gemini-cli@${GEMINI_CLI_VERSION} && \
 # Setup unprivileged user defaults
 COPY usr/ /usr/
 RUN chmod +x /usr/local/sbin/docker-entrypoint.sh && \
-    deluser node
+    deluser node && \
+    apt-get update && \
+    apt-get install -y --no-install-recommends gosu && \
+    rm -rf /var/lib/apt/lists/*
 
 WORKDIR /home/gemini/workspace
 ENTRYPOINT ["/usr/local/sbin/docker-entrypoint.sh", "gemini"]
