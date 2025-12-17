@@ -23,7 +23,6 @@ docker run --rm -it \
   -e DEFAULT_GID=$(id -g) \
   -e "TERM=$TERM" \
   -e "GEMINI_API_KEY=$GEMINI_API_KEY" \
-  -e "GITHUB_MCP_PAT=$GITHUB_MCP_PAT" \
   ghcr.io/ly4096x/gemini-cli [command]
 ```
 
