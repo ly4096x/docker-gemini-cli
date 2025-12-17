@@ -2,11 +2,11 @@
 
 A convenient and isolated way to run the [Gemini CLI](https://github.com/google-gemini/gemini-cli) without needing to install Node.js or its dependencies on your local system. This repository provides automatically updated Docker images.
 
-[![build](https://github.com/tgagor/docker-gemini-cli/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/tgagor/docker-gemini-cli/actions/workflows/build.yml)
-![GitHub](https://img.shields.io/github/license/tgagor/docker-gemini-cli)
-![Docker Stars](https://img.shields.io/docker/stars/tgagor/gemini-cli)
-![Docker Pulls](https://img.shields.io/docker/pulls/tgagor/gemini-cli)
-![GitHub Release Date](https://img.shields.io/github/release-date/tgagor/docker-gemini-cli)
+[![build](https://github.com/ly4096x/docker-gemini-cli/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/ly4096x/docker-gemini-cli/actions/workflows/build.yml)
+![GitHub](https://img.shields.io/github/license/ly4096x/docker-gemini-cli)
+![Docker Stars](https://img.shields.io/docker/stars/ly4096x/gemini-cli)
+![Docker Pulls](https://img.shields.io/docker/pulls/ly4096x/gemini-cli)
+![GitHub Release Date](https://img.shields.io/github/release-date/ly4096x/docker-gemini-cli)
 
 
 ## Prerequisites
@@ -83,8 +83,6 @@ gemini
 ```
 
 ## Supported Tags
-
-The following tags are available on [Docker Hub](https://hub.docker.com/r/tgagor/docker-gemini-cli):
 
 *   [`latest`](https://ghcr.io/ly4096x/gemini-cli/tags): The most recent, stable version of the Gemini CLI.
 *   [`v0.19.4`](https://ghcr.io/ly4096x/gemini-cli/tags) (e.g., `v0.11.0`): Corresponds to a specific version of the Gemini CLI.
