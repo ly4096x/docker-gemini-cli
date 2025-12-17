@@ -4,8 +4,6 @@ A convenient and isolated way to run the [Gemini CLI](https://github.com/google-
 
 [![build](https://github.com/ly4096x/docker-gemini-cli/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/ly4096x/docker-gemini-cli/actions/workflows/build.yml)
 ![GitHub](https://img.shields.io/github/license/ly4096x/docker-gemini-cli)
-![Docker Stars](https://img.shields.io/docker/stars/ly4096x/gemini-cli)
-![Docker Pulls](https://img.shields.io/docker/pulls/ly4096x/gemini-cli)
 ![GitHub Release Date](https://img.shields.io/github/release-date/ly4096x/docker-gemini-cli)
 
 
@@ -16,8 +14,6 @@ A convenient and isolated way to run the [Gemini CLI](https://github.com/google-
 ## Usage
 
 ### Basic Docker Usage
-
-While not recommended, you can still run the container directly with Docker commands:
 
 ```bash
 docker run --rm -it \
@@ -84,9 +80,11 @@ gemini
 
 ## Supported Tags
 
+The following tags are available on [Docker Hub](https://hub.docker.com/r/ly4096x/docker-gemini-cli):
+
 *   [`latest`](https://ghcr.io/ly4096x/gemini-cli/tags): The most recent, stable version of the Gemini CLI.
-*   [`v0.19.4`](https://ghcr.io/ly4096x/gemini-cli/tags) (e.g., `v0.11.0`): Corresponds to a specific version of the Gemini CLI.
-*   [`v0.19`](https://ghcr.io/ly4096x/gemini-cli/tags) (e.g., `v0.11`): Points to the latest patch release for a minor version.
+*   [`v0.21.0`](https://ghcr.io/ly4096x/gemini-cli/tags) (e.g., `v0.11.0`): Corresponds to a specific version of the Gemini CLI.
+*   [`v0.21`](https://ghcr.io/ly4096x/gemini-cli/tags) (e.g., `v0.11`): Points to the latest patch release for a minor version.
 *   [`v0`](https://ghcr.io/ly4096x/gemini-cli/tags) (e.g., `v0`): Points to the latest minor release for a major version.
 
 ## Security
