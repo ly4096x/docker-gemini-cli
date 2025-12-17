@@ -10,7 +10,7 @@ RUN chmod +x /usr/local/sbin/docker-entrypoint.sh
 ARG GEMINI_CLI_VERSION="latest"
 ARG TARGETPLATFORM
 RUN bash -c "apt-get update && \
-    apt-get install -y --no-install-recommends curl unzip procps && \
+    apt-get install -y --no-install-recommends curl unzip procps ca-certificates && \
     curl -o- https://fnm.vercel.app/install | bash && \
     source /root/.bashrc && \
     fnm install --lts && \
