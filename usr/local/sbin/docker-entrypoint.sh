@@ -19,6 +19,7 @@ getent group $GID 2>&1 > /dev/null || addgroup --gid $GID $USER
 # create user if it doesn't exist
 getent passwd $UID 2>&1 > /dev/null || adduser --disabled-password --no-create-home --gecos "" --home "$HOME" --uid $UID --gid $GID $USER
 
+chown $USER:$USER $HOME
 gosu $USER:$USER bash -c "mkdir -p $HOME/.gemini $HOME/.local/bin"
 export PATH="$HOME/.local/bin:$HOME/.local/sbin:$PATH"
 
