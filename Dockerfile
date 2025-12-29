@@ -14,7 +14,7 @@ COPY usr/ /usr/
 RUN chmod +x /usr/local/sbin/docker-entrypoint.sh && \
     deluser node && \
     apt-get update && \
-    apt-get install -y --no-install-recommends gosu && \
+    apt-get install -y --no-install-recommends gosu curl sudo && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /home/gemini/workspace
