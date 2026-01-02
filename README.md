@@ -83,7 +83,7 @@ gemini
 The following tags are available on [Docker Hub](https://hub.docker.com/r/ly4096x/docker-gemini-cli):
 
 *   [`latest`](https://ghcr.io/ly4096x/gemini-cli/tags): The most recent, stable version of the Gemini CLI.
-*   [`v0.22.4`](https://ghcr.io/ly4096x/gemini-cli/tags) (e.g., `v0.11.0`): Corresponds to a specific version of the Gemini CLI.
+*   [`v0.22.5`](https://ghcr.io/ly4096x/gemini-cli/tags) (e.g., `v0.11.0`): Corresponds to a specific version of the Gemini CLI.
 *   [`v0.22`](https://ghcr.io/ly4096x/gemini-cli/tags) (e.g., `v0.11`): Points to the latest patch release for a minor version.
 *   [`v0`](https://ghcr.io/ly4096x/gemini-cli/tags) (e.g., `v0`): Points to the latest minor release for a major version.
 
