@@ -23,4 +23,8 @@ chown $USER:$USER $HOME
 gosu $USER:$USER bash -c "mkdir -p $HOME/.gemini $HOME/.local/bin"
 export PATH="$HOME/.local/bin:$HOME/.local/sbin:$PATH"
 
+if [[ "$ENABLE_SUDO" -eq 1 ]]; then
+    echo 'gemini ALL=(ALL) NOPASSWD:ALL' > /etc/sudoers.d/gemini
+fi
+
 gosu $USER:$USER "$@"
