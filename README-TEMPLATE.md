@@ -12,7 +12,7 @@ To support coding agents and advanced usage, this image includes:
 
 *   **SCM & Network:** `git`, `curl`, `wget`, `openssh-client`
 *   **Dev Tools:** `python3` (with `pip`, `venv`), `build-essential` (make, gcc), `jq`
-*   **Utilities:** `zip`, `unzip`, `tree`, `less`
+*   **Utilities:** `zip`, `unzip`, `tree`, `less`, `ripgrep`, `procps` (pgrep)
 *   **Editors:** `vim`, `nano`
 *   **Docker:** `docker` CLI (client)
 

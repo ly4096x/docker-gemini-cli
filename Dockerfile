@@ -24,9 +24,11 @@ RUN chmod +x /usr/local/sbin/docker-entrypoint.sh && \
         less \
         nano \
         openssh-client \
+        procps \
         python3 \
         python3-pip \
         python3-venv \
+        ripgrep \
         sudo \
         tree \
         unzip \
