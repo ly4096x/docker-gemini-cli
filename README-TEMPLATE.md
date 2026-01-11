@@ -13,8 +13,8 @@ To support coding agents and advanced usage, this image includes:
 *   **SCM & Network:** `git`, `curl`, `wget`, `openssh-client`
 *   **Dev Tools:** `python3` (with `pip`, `venv`), `build-essential` (make, gcc), `jq`
 *   **Utilities:** `zip`, `unzip`, `tree`, `less`, `ripgrep`, `procps` (pgrep)
-*   **Editors:** `vim`, `nano`
-*   **Docker:** `docker` CLI (client)
+*   **Editors:** `neovim`, `nano`
+*   **Docker:** `docker-ce-cli` (latest from docker.com)
 
 > **Note:** To use Docker inside the container (e.g., for agents to run containers), mount the Docker socket: `-v /var/run/docker.sock:/var/run/docker.sock`
 
