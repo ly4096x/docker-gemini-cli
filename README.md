@@ -6,6 +6,17 @@ A convenient and isolated way to run the [Gemini CLI](https://github.com/google-
 ![GitHub](https://img.shields.io/github/license/ly4096x/docker-gemini-cli)
 ![GitHub Release Date](https://img.shields.io/github/release-date/ly4096x/docker-gemini-cli)
 
+## Included Tools
+
+To support coding agents and advanced usage, this image includes:
+
+*   **SCM & Network:** `git`, `curl`, `wget`, `openssh-client`
+*   **Dev Tools:** `python3` (with `pip`, `venv`), `build-essential` (make, gcc), `jq`
+*   **Utilities:** `zip`, `unzip`, `tree`, `less`, `ripgrep`, `procps` (pgrep)
+*   **Editors:** `neovim`, `nano`
+*   **Docker:** `docker-ce-cli` (latest from docker.com)
+
+> **Note:** To use Docker inside the container (e.g., for agents to run containers), mount the Docker socket: `-v /var/run/docker.sock:/var/run/docker.sock`
 
 ## Prerequisites
 
@@ -19,6 +30,7 @@ A convenient and isolated way to run the [Gemini CLI](https://github.com/google-
 docker run --rm -it \
     -v "$(pwd):/home/gemini/workspace" \
     -v "$HOME/.gemini:/home/gemini/.gemini" \
+    -e ENABLE_SUDO=0 \
     -e DEFAULT_UID=$(id -u) \
     -e DEFAULT_GID=$(id -g) \
     ghcr.io/ly4096x/gemini-cli [command]
@@ -38,6 +50,7 @@ function gemini {
     docker run -i ${tty_args} --rm \
         -v "$(pwd):/home/gemini/workspace" \
         -v "$HOME/.gemini:/home/gemini/.gemini" \
+        -e ENABLE_SUDO=0 \
         -e DEFAULT_UID=$(id -u) \
         -e DEFAULT_GID=$(id -g) \
         ghcr.io/ly4096x/gemini-cli "$@"
@@ -83,8 +96,8 @@ gemini
 The following tags are available on [Docker Hub](https://hub.docker.com/r/ly4096x/docker-gemini-cli):
 
 *   [`latest`](https://ghcr.io/ly4096x/gemini-cli/tags): The most recent, stable version of the Gemini CLI.
-*   [`v0.22.5`](https://ghcr.io/ly4096x/gemini-cli/tags) (e.g., `v0.11.0`): Corresponds to a specific version of the Gemini CLI.
-*   [`v0.22`](https://ghcr.io/ly4096x/gemini-cli/tags) (e.g., `v0.11`): Points to the latest patch release for a minor version.
+*   [`v0.23.0`](https://ghcr.io/ly4096x/gemini-cli/tags) (e.g., `v0.11.0`): Corresponds to a specific version of the Gemini CLI.
+*   [`v0.23`](https://ghcr.io/ly4096x/gemini-cli/tags) (e.g., `v0.11`): Points to the latest patch release for a minor version.
 *   [`v0`](https://ghcr.io/ly4096x/gemini-cli/tags) (e.g., `v0`): Points to the latest minor release for a major version.
 
 ## Security
