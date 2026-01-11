@@ -30,6 +30,7 @@ To support coding agents and advanced usage, this image includes:
 docker run --rm -it \
     -v "$(pwd):/home/gemini/workspace" \
     -v "$HOME/.gemini:/home/gemini/.gemini" \
+    -e ENABLE_SUDO=0 \
     -e DEFAULT_UID=$(id -u) \
     -e DEFAULT_GID=$(id -g) \
     ghcr.io/ly4096x/gemini-cli [command]
@@ -49,6 +50,7 @@ function gemini {
     docker run -i ${tty_args} --rm \
         -v "$(pwd):/home/gemini/workspace" \
         -v "$HOME/.gemini:/home/gemini/.gemini" \
+        -e ENABLE_SUDO=0 \
         -e DEFAULT_UID=$(id -u) \
         -e DEFAULT_GID=$(id -g) \
         ghcr.io/ly4096x/gemini-cli "$@"

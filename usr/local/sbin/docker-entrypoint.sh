@@ -2,7 +2,8 @@
 
 set -eu
 
-ENABLE_SUDO=${ENABLE_SUDO:-0}
+: "${ENABLE_SUDO:?ENABLE_SUDO environment variable must be set (0 or 1)}"
+
 USER_UID=${DEFAULT_UID:-1000}
 USER_GID=${DEFAULT_GID:-1000}
 USER_NAME=${DEFAULT_USERNAME:-gemini}
