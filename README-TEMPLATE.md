@@ -6,6 +6,17 @@ A convenient and isolated way to run the [Gemini CLI](https://github.com/google-
 ![GitHub](https://img.shields.io/github/license/ly4096x/docker-gemini-cli)
 ![GitHub Release Date](https://img.shields.io/github/release-date/ly4096x/docker-gemini-cli)
 
+## Included Tools
+
+To support coding agents and advanced usage, this image includes:
+
+*   **SCM & Network:** `git`, `curl`, `wget`, `openssh-client`
+*   **Dev Tools:** `python3` (with `pip`, `venv`), `build-essential` (make, gcc), `jq`
+*   **Utilities:** `zip`, `unzip`, `tree`, `less`
+*   **Editors:** `vim`, `nano`
+*   **Docker:** `docker` CLI (client)
+
+> **Note:** To use Docker inside the container (e.g., for agents to run containers), mount the Docker socket: `-v /var/run/docker.sock:/var/run/docker.sock`
 
 ## Prerequisites
 
